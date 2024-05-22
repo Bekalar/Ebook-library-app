@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Ebook Library
+{% endblock %}
+
+{% block body %}
+<div class="grid items-center gap-4 sm:grid-cols-2 md:grid-cols-6 xl:grid-cols-10">
+    {% for ebook in ebooks %}
+    <div class="mb-4 text-center text-md">
+        <a href="{{ path('app_ebook_show', { ebook: ebook.id }) }}">{{ ebook.title }}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

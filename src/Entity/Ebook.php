@@ -26,6 +26,9 @@ class Ebook
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $created = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $filename = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Ebook
     public function setCreated(\DateTimeInterface $created): static
     {
         $this->created = $created;
+
+        return $this;
+    }
+
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    public function setFilename(string $filename): static
+    {
+        $this->filename = $filename;
 
         return $this;
     }

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Ebook Library
+{% endblock %}
+
+{% block body %}
+<div class="items-center justify-between block">
+    <h2>{{ ebook.title }}</h2>
+    <div>{{ ebook.description }}</div>
+    <div class="text-black">
+        {% if date(ebook.created) < date('-1year') %}
+            Older than 1 year 
+        {% else %} {{ ebook.created|date('d/m/Y') }} 
+        {% endif %} 
+        </div>
+    </div>
+    {% endblock %}

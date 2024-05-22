@@ -19,11 +19,11 @@
   </script> #}
 </head>
 
-<body class="bg-gray-100 text-slate-700">
-  <nav class="top-0 z-50 items-center justify-between w-full py-2 bg-slate-700">
+<body class="bg-gray-100 text-slate-900">
+  <nav class="top-0 z-50 items-center justify-between w-full py-2 bg-slate-900">
     <div class="container flex items-center justify-between px-2 mx-auto">
       <div class="flex justify-between w-full text-xl text-gray-100">
-        <a class="inline-block p-4" href="{{ path('app_index') }}">Ebooks library</a>
+        <a class="inline-block p-4" href="{{ path('app_ebook') }}">Ebooks library</a>
         <div class="flex items-center justify-between">
           <a class="inline-block p-4" href="#">Login</a>
           <a class="inline-block p-4" href="#">Register</a>
@@ -39,23 +39,23 @@
     {# Section 1 #}
     <section>
       <div class="container flex items-center justify-between w-full mx-auto">
-        <div class="flex items-center justify-between w-full py-5 mx-10 my-5">
+        <div class="items-center justify-between w-full py-5 mx-10 my-5 md:flex">
 
           {# text #}
-          <div class="text-4xl text-black">
-            <a href="{{ path('app_index') }}">Homepage</a>
+          <div class="mb-4 text-4xl text-black">
+            <a href="{{ path('app_ebook') }}">Homepage</a>
             {% block breadcrumbs %}
 
             {% endblock %}
           </div>
 
           {# searchbar and search button #}
-          <div class="bg-gray-200">
-            <div class="container flex items-center justify-center">
+          <div class="bg-gray-100">
+            <div class="container flex items-center justify-start">
               <div class="relative">
 
                 {# searchbar #}
-                <input type="text" class="z-0 pl-5 pr-8 rounded h-14 w-96 focus:shadow focus:outline-none"
+                <input type="text" class="z-0 pl-5 pr-8 rounded h-14 w-80 focus:shadow focus:outline-none"
                   placeholder="Search anything...">
                 <div class="absolute top-4 right-3">
                   <i class="z-20 text-gray-400 fa fa-search hover:text-gray-500"></i>
@@ -63,7 +63,7 @@
               </div>
 
               {# search button #}
-              <button class="w-32 h-12 ml-5 font-semibold text-white bg-gray-600 rounded-full">
+              <button class="h-12 ml-1 font-semibold text-white rounded-full bg-slate-900 w-28">
                 <div class="flex items-center justify-center gap-3">
                   <span class="text-xl">Search</span>
                 </div>

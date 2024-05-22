@@ -11,8 +11,7 @@ class FrontController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(): Response
     {
-        return $this->render('front/index.html.twig', [
-            'controller_name' => 'FrontController',
-        ]);
+
+        return $this->render('base.html.twig');
     }
 }
