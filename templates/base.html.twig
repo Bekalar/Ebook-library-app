@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <title>{% block title %} Ebook library {% endblock %}</title>
 
+  {# Main colors of this project: slate-900 and gray-100 #}
+
   {% block stylesheets %}
   <script></script>
   {% endblock %}
@@ -27,6 +29,7 @@
         <div class="flex items-center justify-between">
           <a class="inline-block p-4" href="#">Login</a>
           <a class="inline-block p-4" href="#">Register</a>
+          <a class="inline-block p-4" href="{{ path('app_ebook_add') }}">Add new</a>
           <a class="inline-block p-4" href="#">Profile</a>
         </div>
       </div>
@@ -86,6 +89,16 @@
           {% endblock %}
         </div>
       </div>
+    </section>
+
+    {# Section 3 - flash #}
+
+    <section>
+      {% for message in app.flashes('success') %}
+      <div class="absolute p-3 m-2 mx-auto text-right bg-green-600 rounded-full right-5 bottom-5">
+        <div class="text-grey-200">{{ message }}</div>
+      </div>
+      {% endfor %}
     </section>
 
   </div>

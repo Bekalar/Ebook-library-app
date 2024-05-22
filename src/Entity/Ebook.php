@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\EbookRepository;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\EbookRepository;
 
 #[ORM\Entity(repositoryClass: EbookRepository::class)]
 class Ebook
@@ -28,6 +29,11 @@ class Ebook
 
     #[ORM\Column(length: 255)]
     private ?string $filename = null;
+
+    public function __construct()
+    {
+        $this->created = new DateTime;
+    }
 
     public function getId(): ?int
     {

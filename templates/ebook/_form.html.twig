@@ -1,0 +1,42 @@
+{{ form_start(form) }}
+<div>{{ form_errors(form) }}</div>
+
+{# Form title #}
+<div>
+    {{ form_label(form.title, 'Please enter the title') }}
+</div>
+<div>
+    {{ form_widget(form.title)}}
+</div>
+
+{# Form description #}
+<div>
+    {{ form_label(form.description, 'Please enter the description') }}
+</div>
+<div>
+    {{ form_widget(form.description)}}
+</div>
+
+{# Form author #}
+<div>
+    {{ form_label(form.author, 'Please enter the author') }}
+</div>
+<div>
+    {{ form_widget(form.author)}}
+</div>
+
+{# Form filename #}
+<div>
+    {{ form_label(form.filename, 'Provide correct ".pdf" file') }}
+</div>
+<div>
+    {{ form_widget(form.filename)}}
+</div>
+
+<button class="h-8 mt-3 font-semibold text-white rounded-full bg-slate-900 w-28" type="submit">
+    <div class="flex items-center justify-center gap-3">
+        <span class="text-xl">Submit</span>
+    </div>
+</button>
+
+{{ form_end(form) }}
