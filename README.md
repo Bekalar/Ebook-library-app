@@ -13,11 +13,13 @@ User Panel
   <li>Profile</li>
   <li>Edit Profile</li>
   <li>Add ebook</li>
+  <li>Add, remove comment</li>
 </ul>
 Admin Panel
 <ul>
   <li>Add, remove, edit, grant access to user</li>
   <li>Add, remove, edit category</li>
   <li>Add, remove, edit, change status (approved) ebook</li>
+  <li>Add, remove, comment</li>
   <li>Analytics and Statistics dashboard</li>
 </ul>
