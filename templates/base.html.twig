@@ -1,17 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %} Ebook library {% endblock %}</title>
+
+  {% block stylesheets %}
+  <script></script>
+  {% endblock %}
+  {% block javascripts %}
+  <script></script>
+  {% endblock %}
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  {#
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script> #}
+</head>
+
+<body class="bg-gray-100 text-slate-700">
+  <nav class="top-0 z-50 items-center justify-between w-full py-2 bg-slate-700">
+    <div class="container flex items-center justify-between px-2 mx-auto">
+      <div class="flex justify-between w-full text-xl text-gray-100">
+        <a class="inline-block p-4" href="{{ path('app_index') }}">Ebooks library</a>
+        <div class="flex items-center justify-between">
+          <a class="inline-block p-4" href="#">Login</a>
+          <a class="inline-block p-4" href="#">Register</a>
+          <a class="inline-block p-4" href="#">Profile</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <div class="container w-full">
+
+    {# Section 1 #}
+    <section>
+      <div class="container flex items-center justify-between w-full mx-auto">
+        <div class="flex items-center justify-between w-full py-5 mx-10 my-5">
+
+          {# text #}
+          <div class="text-4xl text-black">
+            <a href="{{ path('app_index') }}">Homepage</a>
+            {% block breadcrumbs %}
+
+            {% endblock %}
+          </div>
+
+          {# searchbar and search button #}
+          <div class="bg-gray-200">
+            <div class="container flex items-center justify-center">
+              <div class="relative">
+
+                {# searchbar #}
+                <input type="text" class="z-0 pl-5 pr-8 rounded h-14 w-96 focus:shadow focus:outline-none"
+                  placeholder="Search anything...">
+                <div class="absolute top-4 right-3">
+                  <i class="z-20 text-gray-400 fa fa-search hover:text-gray-500"></i>
+                </div>
+              </div>
+
+              {# search button #}
+              <button class="w-32 h-12 ml-5 font-semibold text-white bg-gray-600 rounded-full">
+                <div class="flex items-center justify-center gap-3">
+                  <span class="text-xl">Search</span>
+                </div>
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    {# Section 2 #}
+    <section>
+      <div class="container flex items-center justify-between w-full mx-auto">
+        <div class="flex items-center justify-between w-full p-5">
+          {% block body %}
+
+          {% endblock %}
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+
 </html>
