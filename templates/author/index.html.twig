@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-Ebook Library
+Ebook Author
 {% endblock %}
 
-{% block search %}
-{{ include('ebook/_search.html.twig') }}
+{% block breadcrumbs %}
+-> Author
+{% endblock %}
+
+{% block author %}
+<div class="p-5 mx-2 mt-3 text-lg text-center">{{author}} - ebooks collection</div>
 {% endblock %}
 
 {% block body %}

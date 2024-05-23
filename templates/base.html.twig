@@ -67,7 +67,10 @@
 
     {# Section 2 - ebooks #}
     <section>
-      <div class="container flex items-center justify-between w-full mx-auto">
+      <div class="container items-center justify-between w-full mx-auto">
+        {% block author %}
+
+        {% endblock %}
         <div class="flex items-center justify-between w-full p-5">
           {% block body %}
 

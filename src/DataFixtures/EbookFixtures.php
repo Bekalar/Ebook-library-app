@@ -41,7 +41,12 @@ class EbookFixtures extends Fixture
             ['Sieć średnich napięć', 'opis ksiązki', 'Witold Hoppel', '02-06-2024', 'sbpawdlbdopawud'],
             ['Innowacje w transporcie', 'opis ksiązki', 'Krystyna Wojewódzka-Król', '21-04-2024', 'adsibowaksd'],
             ['Sztuka argumentacji', 'opis ksiązki', 'Krzysztof Szymanek', '20-03-2023', 'sdgpqfjsal'],
-            ['Geometria i trygonometria', 'opis ksiązki', '	Wojciech Guzicki', '05-05-2020', 'sgpasfjbapejfo'],
+            ['Geometria i trygonometria', 'opis ksiązki', 'Wojciech Guzicki', '05-05-2020', 'sgpasfjbapejfo'],
+            ['Geometria analityczna', 'opis ksiązki', 'Wojciech Guzicki', '25-06-2023', 'dshdvespacasv'],
+            ['Artmetyka i algebra', 'opis ksiązki', 'Wojciech Guzicki', '01-10-2021', 'caojescsrbdsr'],
+            ['Pan Tadeusz', 'opis ksiązki', 'Adam Mickiewicz', '02-11-2022', 'vsdcstbfnumg'],
+            ['Konrad Wallenrod', 'opis ksiązki', 'Adam Mickiewicz', '21-03-2024', 'dtbfdtjspcbfygyf'],
+            
         ];
     }
 }
