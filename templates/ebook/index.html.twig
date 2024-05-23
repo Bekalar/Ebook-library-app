@@ -4,6 +4,10 @@
 Ebook Library
 {% endblock %}
 
+{% block search %}
+{{ include('ebook/_search.html.twig') }}
+{% endblock %}
+
 {% block body %}
 <div class="grid items-center gap-4 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8">
     {% for ebook in ebooks %}

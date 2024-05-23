@@ -44,10 +44,10 @@
     {# Section 1 - search + navigation info #}
     <section>
       <div class="container flex items-center justify-between w-full mx-auto">
-        <div class="items-center justify-between w-full py-5 mx-10 my-5 md:flex">
+        <div class="items-center justify-between w-full mx-10 mt-5 md:flex">
 
           {# breadcrumbs #}
-          <div class="mb-4 text-3xl text-black">
+          <div class="mb-2 text-3xl text-black">
             <a href="{{ path('app_ebook') }}">Homepage</a>
             {% block breadcrumbs %}
 
@@ -56,27 +56,9 @@
 
 
           {# searchbar and search button #}
-          <div class="bg-gray-100">
-            <div class="container flex items-center justify-start">
-              <div class="relative">
-
-                {# searchbar #}
-                <input type="text" class="z-0 pl-5 pr-8 rounded h-14 w-80 focus:shadow focus:outline-none"
-                  placeholder="Search anything...">
-                <div class="absolute top-4 right-3">
-                  <i class="text-gray-400 fa fa-search hover:text-gray-500"></i>
-                </div>
-              </div>
-
-              {# search button #}
-              <button class="h-12 ml-1 font-semibold text-white rounded-full bg-slate-900 w-28">
-                <div class="flex items-center justify-center gap-3">
-                  <span class="text-xl">Search</span>
-                </div>
-              </button>
-
-            </div>
-          </div>
+          {% block search %}
+          
+          {% endblock %}
 
         </div>
       </div>
