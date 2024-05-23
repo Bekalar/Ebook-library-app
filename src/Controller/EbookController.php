@@ -70,7 +70,7 @@ class EbookController extends AbstractController
             return $this->redirectToRoute('app_ebook');
         }
 
-        return $this->render('ebook/add.html.twig', [
+        return $this->render('ebook/edit.html.twig', [
             'form' => $form->createView(),
         ]);
     }

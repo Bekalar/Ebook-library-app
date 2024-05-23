@@ -1,39 +1,35 @@
-{{ form_start(form) }}
+{{ form_start(form, {'attr': {'class': 'w-2/3 p-2', 'novalidate': 'novalidate'}} ) }}
 <div>{{ form_errors(form) }}</div>
 
 {# Form title #}
 <div>
-    {{ form_label(form.title, 'Please enter the title') }}
-</div>
-<div>
-    {{ form_widget(form.title)}}
+    {{ form_label(form.title, 'Please enter the title', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(form.title, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded mb-2'}}) }}
+    {{ form_errors(form.title) }}
 </div>
 
 {# Form description #}
 <div>
-    {{ form_label(form.description, 'Please enter the description') }}
-</div>
-<div>
-    {{ form_widget(form.description)}}
+    {{ form_label(form.description, 'Please enter the description', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(form.description, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded mb-2 h-32'}}) }}
+    {{ form_errors(form.description) }}
 </div>
 
 {# Form author #}
 <div>
-    {{ form_label(form.author, 'Please enter the author') }}
-</div>
-<div>
-    {{ form_widget(form.author)}}
+    {{ form_label(form.author, 'Please enter the author', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(form.author, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded mb-2'}}) }}
+    {{ form_errors(form.author) }}
 </div>
 
 {# Form filename #}
 <div>
-    {{ form_label(form.filename, 'Provide correct ".pdf" file') }}
-</div>
-<div>
-    {{ form_widget(form.filename)}}
+    {{ form_label(form.filename, 'Provide correct ".pdf" file', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(form.filename, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded mb-2'}}) }}
+    {{ form_errors(form.filename) }}
 </div>
 
-<button class="h-8 mt-3 font-semibold text-white rounded-full bg-slate-900 w-28" type="submit">
+<button class="w-full h-12 mt-5 font-semibold text-right text-white rounded-full bg-slate-900 w-28" type="submit">
     <div class="flex items-center justify-center gap-3">
         <span class="text-xl">Submit</span>
     </div>

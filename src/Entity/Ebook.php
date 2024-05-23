@@ -6,6 +6,7 @@ use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\EbookRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: EbookRepository::class)]
 class Ebook
@@ -15,18 +16,24 @@ class Ebook
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank(message: "Please enter valid title")]
+    #[Assert\Length(min: 5, max: 100)]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Assert\NotBlank(message: "Please enter valid description")]
     #[ORM\Column(length: 500)]
     private ?string $description = null;
 
+    #[Assert\NotBlank(message: "Please enter valid author")]
+    #[Assert\Length(min: 5, max: 100)]
     #[ORM\Column(length: 255)]
     private ?string $author = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $created = null;
 
+    #[Assert\NotBlank(message: "Please enter valid file")]
     #[ORM\Column(length: 255)]
     private ?string $filename = null;
 

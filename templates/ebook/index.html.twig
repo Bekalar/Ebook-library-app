@@ -5,11 +5,9 @@ Ebook Library
 {% endblock %}
 
 {% block body %}
-<div class="grid items-center gap-4 sm:grid-cols-2 md:grid-cols-6 xl:grid-cols-10">
+<div class="grid items-center gap-4 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8">
     {% for ebook in ebooks %}
-    <div class="mb-4 text-center text-md">
-        <a href="{{ path('app_ebook_show', { ebook: ebook.id }) }}">{{ ebook.title }}</a>
-    </div>
+    {{ include('ebook/_ebook.html.twig', {ebook: ebook}) }}
     {% endfor %}
 </div>
 {% endblock %}

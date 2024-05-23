@@ -22,7 +22,9 @@
 </head>
 
 <body class="bg-gray-100 text-slate-900">
-  <nav class="top-0 z-50 items-center justify-between w-full py-2 bg-slate-900">
+
+  {# Navigation #}
+  <nav class="top-0 items-center justify-between w-full py-2 bg-slate-900">
     <div class="container flex items-center justify-between px-2 mx-auto">
       <div class="flex justify-between w-full text-xl text-gray-100">
         <a class="inline-block p-4" href="{{ path('app_ebook') }}">Ebooks library</a>
@@ -39,18 +41,19 @@
 
   <div class="container w-full">
 
-    {# Section 1 #}
+    {# Section 1 - search + navigation info #}
     <section>
       <div class="container flex items-center justify-between w-full mx-auto">
         <div class="items-center justify-between w-full py-5 mx-10 my-5 md:flex">
 
-          {# text #}
-          <div class="mb-4 text-4xl text-black">
+          {# breadcrumbs #}
+          <div class="mb-4 text-3xl text-black">
             <a href="{{ path('app_ebook') }}">Homepage</a>
             {% block breadcrumbs %}
 
             {% endblock %}
           </div>
+
 
           {# searchbar and search button #}
           <div class="bg-gray-100">
@@ -61,7 +64,7 @@
                 <input type="text" class="z-0 pl-5 pr-8 rounded h-14 w-80 focus:shadow focus:outline-none"
                   placeholder="Search anything...">
                 <div class="absolute top-4 right-3">
-                  <i class="z-20 text-gray-400 fa fa-search hover:text-gray-500"></i>
+                  <i class="text-gray-400 fa fa-search hover:text-gray-500"></i>
                 </div>
               </div>
 
@@ -80,7 +83,7 @@
 
     </section>
 
-    {# Section 2 #}
+    {# Section 2 - ebooks #}
     <section>
       <div class="container flex items-center justify-between w-full mx-auto">
         <div class="flex items-center justify-between w-full p-5">
@@ -91,12 +94,11 @@
       </div>
     </section>
 
-    {# Section 3 - flash #}
-
+    {# Section 3 - flash messages #}
     <section>
       {% for message in app.flashes('success') %}
-      <div class="absolute p-3 m-2 mx-auto text-right bg-green-600 rounded-full right-5 bottom-5">
-        <div class="text-grey-200">{{ message }}</div>
+      <div class="absolute p-3 m-2 mx-auto text-right bg-green-600 border-2 border-green-800 rounded-full right-5 bottom-5">
+        <div class="text-gray-200">{{ message }}</div>
       </div>
       {% endfor %}
     </section>
