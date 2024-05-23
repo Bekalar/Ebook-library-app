@@ -39,6 +39,9 @@ class EbookFixtures extends Fixture
             ['Mosty stalowe', 'opis ksiązki', 'Henryk Zobel, Thakaa Al-Khafaji', '30-09-2022', 'tyrhsclakouoipp'],
             ['Charnobyl i Fukushima', 'opis ksiązki', 'Tomasz Ilnicki', '01-04-2023', 'pfdrgosawdfyjvs'],
             ['Sieć średnich napięć', 'opis ksiązki', 'Witold Hoppel', '02-06-2024', 'sbpawdlbdopawud'],
+            ['Innowacje w transporcie', 'opis ksiązki', 'Krystyna Wojewódzka-Król', '21-04-2024', 'adsibowaksd'],
+            ['Sztuka argumentacji', 'opis ksiązki', 'Krzysztof Szymanek', '20-03-2023', 'sdgpqfjsal'],
+            ['Geometria i trygonometria', 'opis ksiązki', '	Wojciech Guzicki', '05-05-2020', 'sgpasfjbapejfo'],
         ];
     }
 }
