@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 use App\Entity\Ebook;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class EbookFixtures extends Fixture
 {
@@ -46,6 +45,10 @@ class EbookFixtures extends Fixture
             ['Artmetyka i algebra', 'opis ksiązki', 'Wojciech Guzicki', '01-10-2021', 'caojescsrbdsr'],
             ['Pan Tadeusz', 'opis ksiązki', 'Adam Mickiewicz', '02-11-2022', 'vsdcstbfnumg'],
             ['Konrad Wallenrod', 'opis ksiązki', 'Adam Mickiewicz', '21-03-2024', 'dtbfdtjspcbfygyf'],
+            ['English Grammar in Use Book with Answers', 'opis ksiązki', 'Raymond Murphy', '30-03-2023', 'svdfviscpvjzdf'],
+            ['Niemiecki Kein Problem', 'opis ksiązki', 'Waldemar Trambacz', '04-06-2021', 'savhrbspfse'],
+            ['1984', 'opis ksiązki', 'George Orwell', '06-06-2020', 'ivdspaodksvvfdv'],
+            ['The Great Gatsby', 'opis ksiązki', 'F.Scott Fitzgerald', '04-07-2020', 'fasfvrsfr'],
             
         ];
     }
