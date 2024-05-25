@@ -1,16 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-Ebook Library
+Ebook Category
+{% endblock %}
+
+{% block breadcrumbs %}
+-> Category
 {% endblock %}
 
 {% block search %}
 {{ include('ebook/_search.html.twig') }}
 {% endblock %}
 
+{% block centertitle %}
+<div class="p-5 mx-2 mt-3 text-lg text-center">{{ categoryname|upper }} - ebooks collection</div>
+{% endblock %}
+
 {% block dropdown %}
 {{ include('category/_category.html.twig') }}
 {% endblock %}
+
+
 
 {% block body %}
 <div class="grid items-center gap-4 mt-5 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8">

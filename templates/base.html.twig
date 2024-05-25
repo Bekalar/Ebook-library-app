@@ -50,14 +50,12 @@
           <div class="mb-3 text-3xl text-black">
             <a href="{{ path('app_ebook') }}">Homepage</a>
             {% block breadcrumbs %}
-
             {% endblock %}
           </div>
 
 
           {# searchbar and search button #}
           {% block search %}
-
           {% endblock %}
 
         </div>
@@ -67,67 +65,17 @@
 
     {# Section 2 - categories #}
     <section>
-      <div class="container flex items-center justify-between w-full mx-auto">
-        <div class="items-center justify-between w-full mx-10 my-5 md:flex">
-
-          {# Dropdown Categories #}
-          <button id="multiLevelDropdownButton" data-dropdown-toggle="multi-dropdown"
-            class="inline-flex items-center justify-center w-1/5 px-3 py-1 text-sm font-medium text-center text-gray-200 border-2 border-gray-400 rounded-full bg-slate-900"
-            type="button">Categories
-            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 10 6">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m1 1 4 4 4-4" />
-            </svg>
-          </button>
-
-          {# Dropdown menu #}
-          <div id="multi-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-            <ul class="py-2 text-sm text-gray-200 bg-slate-900" aria-labelledby="multiLevelDropdownButton">
-              {# Dropdown li #}
-              <li>
-                <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown"
-                  data-dropdown-placement="right-start" type="button"
-                  class="flex items-center justify-between w-2/3 px-4 py-2 hover:bg-slate-800">Dropdown
-                  <svg class="w-2.5 h-2.5 ms-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="m1 9 4-4-4-4" />
-                  </svg>
-                </button>
-                <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                  <ul class="py-2 text-sm text-gray-200 bg-slate-900" aria-labelledby="doubleDropdownButton">
-                    {# Normal li #}
-                    <li>
-                      <a href="#" class="block px-4 py-2">
-                        Overview
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              {# Normal li #}
-              <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                  Signout
-                </a>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
+      {% block dropdown %}
+      {% endblock %}
     </section>
 
     {# Section 3 - ebooks #}
     <section>
       <div class="container items-center justify-between w-full mx-auto">
-        {% block author %}
-
+        {% block centertitle %}
         {% endblock %}
         <div class="flex items-center justify-between w-full p-5">
           {% block body %}
-
           {% endblock %}
         </div>
       </div>

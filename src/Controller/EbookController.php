@@ -4,21 +4,24 @@ namespace App\Controller;
 
 use App\Entity\Ebook;
 use App\Form\EbookType;
-use App\Repository\EbookRepository;
+use App\Utils\CategoryTreeFrontPage;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+
 
 class EbookController extends AbstractController
 {
     #[Route('/ebooks', name: 'app_ebook')]
-    public function index(EbookRepository $ebooks): Response
+    public function index(EntityManagerInterface $manager, CategoryTreeFrontPage $tree): Response
     {
-
+        $categories = $tree->buildTree();
+        $ebooks = $manager->getRepository(Ebook::class)->findAll();
         return $this->render('ebook/index.html.twig', [
-            'ebooks' => $ebooks->findAll(),
+            'ebooks' => $ebooks,
+            'categories' => $categories,
         ]);
     }
 

@@ -1,0 +1,59 @@
+<div class="container flex items-center justify-between w-full mx-auto">
+    <div class="items-center justify-between w-full mx-10 my-5 md:flex">
+
+        {# Dropdown Categories #}
+        <button id="multiLevelDropdownButton" data-dropdown-toggle="multi-dropdown"
+            class="inline-flex items-center justify-center w-1/5 px-3 py-1 text-sm font-medium text-center text-gray-200 border-2 border-gray-400 rounded-full bg-slate-900 hover:bg-slate-800"
+            type="button">Categories
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+            </svg>
+        </button>
+
+        {# Dropdown menu #}
+        <div id="multi-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+            <ul class="py-2 text-sm text-gray-200 bg-slate-900" aria-labelledby="multiLevelDropdownButton">
+                {% for category in categories %}
+                <li>
+                    <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown{{category.id}}"
+                        data-dropdown-placement="right-start" type="button"
+                        class="flex items-center justify-between w-full px-4 py-2 hover:bg-slate-800">
+                        <a
+                            href="{{ path('app_category', {'categoryname': category.name|lower|replace({' ': '-'}), 'id': category.id}) }}">
+                            {{ category.name }}
+                        </a>
+                        <svg class="w-2.5 h-2.5 ms-3 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                    </button>
+
+                    {# subcategories #}
+                    <div id="doubleDropdown{{category.id}}"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                        <ul class="py-2 text-sm text-gray-200 bg-slate-900" aria-labelledby="doubleDropdownButton">
+
+                            <li>
+                                {% for child in category.children %}
+                                <a href="{{ path('app_category', {'categoryname': child.name|lower|replace({' ': '-'}), 'id': child.id}) }}"
+                                    class="flex items-center justify-between px-4 py-2 hover:bg-slate-800">
+                                    {{ child.name }}
+                                </a>
+                                {% endfor %}
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+
+    </div>
+</div>
