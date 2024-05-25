@@ -1,7 +1,7 @@
 <h1>Symfony web application </h1>
 <h2><b>Ebook library</b></h2>
 
-Free online library with science ebooks for authorized users.
+Free online library with different ebooks for authorized users.
 <h4>Functionalities</h4>
 
 User Panel
