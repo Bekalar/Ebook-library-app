@@ -10,13 +10,14 @@ User Panel
   <li>Search</li>
   <li>Search by category</li>
   <li>Search by most liked ebook</li>
+  <li>Search by ebook author</li>
   <li>Profile</li>
   <li>Edit Profile</li>
-  <li>Add ebook</li>
-  <li>Add, remove comment</li>
+  <li>Add new ebook</li>
+  <li>Add, edit, remove comment</li>
 </ul>
-Admin Panel
-<ul>
+Admin Panel<br>
+<ul><br>
   <li>Add, remove, edit, grant access to user</li>
   <li>Add, remove, edit category</li>
   <li>Add, remove, edit, change status (approved) ebook</li>
