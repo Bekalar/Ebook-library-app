@@ -34,7 +34,7 @@
           <a class="inline-block p-4" href="{{ path('app_logout') }}">Logout</a>
           {% else %}
           <a class="inline-block p-4" href="{{ path('app_login') }}">Login</a>
-          <a class="inline-block p-4" href="#">Register</a>
+          <a class="inline-block p-4" href="{{ path('app_register') }}">Register</a>
           {% endif %}
 
           {% if is_granted('ROLE_ADMIN')%}
