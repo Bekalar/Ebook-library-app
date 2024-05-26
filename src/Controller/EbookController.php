@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Ebook;
 use App\Form\EbookType;
 use App\Utils\CategoryTreeFrontPage;
@@ -26,16 +27,19 @@ class EbookController extends AbstractController
     }
 
     #[Route('/ebooks/{ebook}', name: 'app_ebook_show')]
-    public function showOne(Ebook $ebook): Response
+    public function showOne(EntityManagerInterface $manager, Ebook $ebook): Response
     {
+        $categories = $manager->getRepository(Category::class)->findAll();
         return $this->render('ebook/show.html.twig', [
             'ebook' => $ebook,
+            'categories' => $categories,
         ]);
     }
 
     #[Route('/ebooks/add', name: 'app_ebook_add', priority: 2)]
     public function add(Request $request, EntityManagerInterface $manager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $ebook = new Ebook;
         $form = $this->createForm(EbookType::class, $ebook);
         $form->handleRequest($request);
@@ -59,6 +63,7 @@ class EbookController extends AbstractController
     #[Route('/ebooks/{ebook}/edit', name: 'app_ebook_edit')]
     public function edit(Ebook $ebook, Request $request, EntityManagerInterface $manager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $form = $this->createForm(EbookType::class, $ebook);
         $form->handleRequest($request);
 
