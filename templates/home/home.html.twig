@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Ebook library Homepage
+{% endblock %}
+
+{% block librarynav %}
+<div class="w-full h-auto p-2 my-3 text-3xl text-center rounded bg-slate-900">
+    <p class="h-auto p-2 text-gray-200">Ebook library</p>
+    <div class="items-center justify-between w-full h-auto p-5 my-2 bg-gray-200 rounded">
+        <div class="container w-full">
+            <p class="p-5 text-2xl text-center">
+                Sprawdź bestsellery, nowości i najlepiej oceniane ebooki wszystko, co chcesz.
+            <div>
+                <div class="flex items-center justify-center">
+                    <img class="h-auto mt-1 rounded" src="{{ asset('images/ebooks-on-laptop-on-desk.jpg') }}">
+                </div>
+                <a href="{{ path('app_ebook') }}"
+                    class="relative inline-flex items-center justify-center mt-3 overflow-hidden font-medium transition duration-300 ease-out bg-gray-200 group">
+                    <button
+                        class="justify-center h-16 text-gray-100 border-2 border-gray-400 rounded w-80 bg-slate-900 tems-center">
+                        Goto ebook library
+                        <span
+                            class="absolute inset-0 flex items-center justify-center h-16 text-white duration-300 -translate-x-full border-2 border-gray-400 rounded w-80 bg-slate-900 group-hover:translate-x-0 ease">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+            </div>
+            </p>
+        </div>
+    </div>
+
+    {# footer #}
+    <footer class="class="pt-8 pb-16 text-center sm:pt-32"">
+        <div class="class="text-center "">
+            <p class="mt-8 text-sm text-gray-300">
+                Copyright © 2024 Ebook library
+            </p>
+        </div>
+    </footer>
+</div>
+{% endblock %}
