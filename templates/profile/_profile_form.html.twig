@@ -1,0 +1,36 @@
+{{ form_start(form, {'attr': {'class': 'w-2/3 p-2', 'novalidate': 'novalidate'}}) }}
+
+{# Form name #}
+<div>
+    {{ form_label(form.name, 'Name', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(form.name, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded
+    mb-2'}}) }}
+    {{ form_errors(form.name) }}
+</div>
+
+{# Form bio #}
+<div>
+    {{ form_label(form.bio, 'Bio', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(form.bio, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded
+    mb-2'}}) }}
+    {{ form_errors(form.bio) }}
+</div>
+
+{# Form Date of birth #}
+<div>
+    {{ form_label(form.dateofBirth, 'Date of birth', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(form.dateofBirth, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded
+    mb-2'}}) }}
+    {{ form_errors(form.dateofBirth) }}
+</div>
+
+{# Submit button #}
+<button
+    class="w-full h-12 mt-5 font-semibold text-right text-white border-2 border-gray-400 rounded-full bg-slate-900 w-28 hover:bg-slate-800"
+    type="submit">
+    <div class="flex items-center justify-center gap-3">
+        <span class="text-xl">Submit</span>
+    </div>
+</button>
+
+{{ form_end(form) }}

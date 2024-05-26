@@ -1,6 +1,10 @@
 {{ form_start(registrationForm, {'attr': {'class': 'w-2/3 p-2', 'novalidate': 'novalidate'}}) }}
 <div>{{ form_errors(registrationForm) }}</div>
 
+<div class="mb-4 text-xl text-gray-500 border-b border-gray-500">
+    Basic Informations
+</div>
+
 {# Form email #}
 <div>
     {{ form_label(registrationForm.email, 'Email', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
@@ -32,6 +36,36 @@
 <div class="flex items-center mt-4 mb-2">
     {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'h-5 w-5 rounded border border-slate-900 mr-2'}}) }}
     {{ form_label(registrationForm.agreeTerms, 'Agree to terms', {'label_attr': {'class': 'block text-sm'}}) }}
+</div>
+
+<div class="mt-4 mb-4 text-xl text-gray-500 border-b border-gray-500">
+    Additional Informations (optional)
+</div>
+
+{# Form profile include #}
+
+{# Form name #}
+<div>
+    {{ form_label(registrationForm.userProfile.name, 'Name', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(registrationForm.userProfile.name, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded
+    mb-2'}}) }}
+    {{ form_errors(registrationForm.userProfile.name) }}
+</div>
+
+{# Form bio #}
+<div>
+    {{ form_label(registrationForm.userProfile.bio, 'Bio', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(registrationForm.userProfile.bio, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded
+    mb-2'}}) }}
+    {{ form_errors(registrationForm.userProfile.bio) }}
+</div>
+
+{# Form Date of birth #}
+<div>
+    {{ form_label(registrationForm.userProfile.dateofBirth, 'Date of birth', {'label_attr': {'class': 'block text-sm mb-2'}}) }}
+    {{ form_widget(registrationForm.userProfile.dateofBirth, {'attr': {'class': 'block w-full border border-slate-900 bg-white rounded
+    mb-2'}}) }}
+    {{ form_errors(registrationForm.userProfile.dateofBirth) }}
 </div>
 
 {# Submit button #}

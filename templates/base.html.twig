@@ -30,7 +30,7 @@
         <div class="flex items-center justify-between">
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
           <a class="inline-block p-4" href="{{ path('app_ebook_add') }}">Add New</a>
-          <a class="inline-block p-4" href="#">Profile</a>
+          <a class="inline-block p-4" href="{{ path('app_user_profile') }}">Profile</a>
           <a class="inline-block p-4" href="{{ path('app_logout') }}">Logout</a>
           {% else %}
           <a class="inline-block p-4" href="{{ path('app_login') }}">Login</a>
