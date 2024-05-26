@@ -15,7 +15,7 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        foreach ($this->UserData() as [$email, $password]) {
+        foreach ($this->AdminData() as [$email, $password]) {
             $user = new User;
             $user->setEmail($email);
             $user->setPassword($this->userPasswordHasher->hashPassword($user ,$password));
@@ -24,13 +24,29 @@ class UserFixtures extends Fixture
             $manager->persist($user);
         }
 
+        foreach ($this->UserData() as [$email2, $password2]) {
+            $user2 = new User;
+            $user2->setEmail($email2);
+            $user2->setPassword($this->userPasswordHasher->hashPassword($user2 ,$password2));
+            $user2->setRoles(['ROLE_USER']);
+
+            $manager->persist($user2);
+        }
+
         $manager->flush();
+    }
+
+    private function AdminData()
+    {
+        return [
+            ['bekalar@web.com', '123'],
+        ];
     }
 
     private function UserData()
     {
         return [
-            ['bekalar@web.com', '123'],
+            ['robert@email.com', '321'],
         ];
     }
 }

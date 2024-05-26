@@ -1,31 +1,30 @@
 <form action="{{ path('app_login') }}" method="POST" class="w-full">
 
     <div class="w-2/3 p-2">
-            {# Email #}
-            <div>
-                <label class="block mb-2 text-sm">Email</label>
-                <input class="block w-full mb-2 bg-white border rounded border-slate-900" type="text" name="_username"
-                    value="{{ lastUsername }}">
+        {# Email #}
+        <div>
+            <label class="block mb-2 text-sm">Email</label>
+            <input class="block w-full mb-2 bg-white border rounded border-slate-900" type="text" name="_username"
+                value="{{ lastUsername }}">
+        </div>
+
+        {# Password #}
+        <div>
+            <label class="block mb-2 text-sm">Password</label>
+            <input class="block w-full mb-2 bg-white border rounded border-slate-900" type="password" name="_password">
+        </div>
+
+        {# Redirect to route #}
+        <input type="hidden" name="_target_path" value="{{ path('app_home') }}">
+
+        {# Submit button #}
+        <button
+            class="w-full h-12 mt-5 font-semibold text-right text-white border-2 border-gray-400 rounded-full bg-slate-900 w-28 hover:bg-slate-800"
+            type="submit">
+            <div class="flex items-center justify-center gap-3">
+                <span class="text-xl">Submit</span>
             </div>
-
-            {# Password #}
-            <div>
-                <label class="block mb-2 text-sm">Password</label>
-                <input class="block w-full mb-2 bg-white border rounded border-slate-900" type="password"
-                    name="_password">
-            </div>
-
-            {# Redirect to route #}
-            <input type="hidden" name="_target_path" value="{{ path('app_home') }}">
-
-            {# Submit button #}
-            <button
-                class="w-full h-12 mt-5 font-semibold text-right text-white border-2 border-gray-400 rounded-full bg-slate-900 w-28 hover:bg-slate-800"
-                type="submit">
-                <div class="flex items-center justify-center gap-3">
-                    <span class="text-xl">Submit</span>
-                </div>
-            </button>
+        </button>
     </div>
 
 </form>
